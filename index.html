@@ -1,52 +1,86 @@
-<form action="https://formspree.io/f/xvkznyag" method="POST" class="space-y-4">
-    <!-- Hidden Subject Field -->
-    <input type="hidden" name="_subject" value="New STEM Interest Survey Submission">
-    
-    <!-- Name / Identifier -->
-    <div>
-        <label class="block text-sm font-medium text-slate-300 mb-1">Your Name / Call Sign</label>
-        <input type="text" name="name" required class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-indigo-500 text-slate-100">
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Interests Survey</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-slate-800 p-8 rounded-xl shadow-lg border border-slate-700">
+        <h1 class="text-2xl font-bold mb-2 text-center text-white">STEM Interest Survey</h1>
+        <p class="text-slate-400 text-sm mb-6 text-center">Please select your primary educational and technical interests.</p>
 
-    <!-- Email Field (Required by Formspree) -->
-    <div>
-        <label class="block text-sm font-medium text-slate-300 mb-1">Email Address</label>
-        <input type="email" name="email" required class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-indigo-500 text-slate-100">
-    </div>
-
-    <!-- Interests Checkboxes -->
-    <div class="space-y-2 pt-2">
-        <span class="block text-sm font-medium text-slate-300 mb-2">Select areas of interest (check all that apply):</span>
+        <!-- Success Message Container -->
+        <div data-fs-success class="hidden bg-emerald-900/50 border border-emerald-500 text-emerald-200 p-4 rounded-lg text-center mb-4">
+            Thank you! Your survey response has been submitted successfully.
+        </div>
         
-        <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
-            <input type="checkbox" name="interests" value="Radio Frequency" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
-            <span class="text-slate-200">Radio Frequency (RF)</span>
-        </label>
+        <!-- Form-level Error Container -->
+        <div data-fs-error class="hidden bg-rose-900/50 border border-rose-500 text-rose-200 p-4 rounded-lg text-center mb-4 text-sm"></div>
 
-        <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
-            <input type="checkbox" name="interests" value="Aerodynamics" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
-            <span class="text-slate-200">Aerodynamics & Rocketry</span>
-        </label>
+        <form id="survey-form" class="space-y-4">
+            <!-- Hidden Subject Field -->
+            <input type="hidden" name="_subject" value="New STEM Interest Survey Submission">
+            
+            <!-- Name / Identifier -->
+            <div>
+                <label class="block text-sm font-medium text-slate-300 mb-1">Your Name / Call Sign</label>
+                <input type="text" name="name" required data-fs-field class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-indigo-500 text-slate-100">
+                <span data-fs-error="name" class="text-rose-400 text-xs mt-1 block"></span>
+            </div>
 
-        <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
-            <input type="checkbox" name="interests" value="Coding" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
-            <span class="text-slate-200">Coding / Software Development</span>
-        </label>
+            <!-- Email Field -->
+            <div>
+                <label class="block text-sm font-medium text-slate-300 mb-1">Email Address</label>
+                <input type="email" name="email" required data-fs-field class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-indigo-500 text-slate-100">
+                <span data-fs-error="email" class="text-rose-400 text-xs mt-1 block"></span>
+            </div>
 
-        <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
-            <input type="checkbox" name="interests" value="Linux" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
-            <span class="text-slate-200">Linux Systems Administration</span>
-        </label>
+            <!-- Interests Checkboxes -->
+            <div class="space-y-2 pt-2">
+                <span class="block text-sm font-medium text-slate-300 mb-2">Select areas of interest (check all that apply):</span>
+                
+                <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
+                    <input type="checkbox" name="interests" value="Radio Frequency" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
+                    <span class="text-slate-200">Radio Frequency (RF)</span>
+                </label>
+
+                <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
+                    <input type="checkbox" name="interests" value="Aerodynamics" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
+                    <span class="text-slate-200">Aerodynamics & Rocketry</span>
+                </label>
+
+                <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
+                    <input type="checkbox" name="interests" value="Coding" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
+                    <span class="text-slate-200">Coding / Software Development</span>
+                </label>
+
+                <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
+                    <input type="checkbox" name="interests" value="Linux" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
+                    <span class="text-slate-200">Linux Systems Administration</span>
+                </label>
+            </div>
+
+            <!-- Other / Write-in Field -->
+            <div class="pt-2">
+                <label class="block text-sm font-medium text-slate-300 mb-1">Other Interests / Comments</label>
+                <input type="text" name="other_interest" placeholder="Enter anything else not listed..." data-fs-field class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-500 text-sm">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" data-fs-submit-btn class="w-full mt-6 py-2 px-4 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg transition duration-200 shadow-md disabled:opacity-50">
+                Submit Survey
+            </button>
+        </form>
     </div>
 
-    <!-- Other / Write-in Field -->
-    <div class="pt-2">
-        <label class="block text-sm font-medium text-slate-300 mb-1">Other Interests / Comments</label>
-        <input type="text" name="other_interest" placeholder="Enter anything else not listed..." class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-500 text-sm">
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" class="w-full mt-6 py-2 px-4 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg transition duration-200 shadow-md">
-        Submit Survey
-    </button>
-</form>
+    <!-- Formspree AJAX Library -->
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#survey-form', formId: 'xvkznyag' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
