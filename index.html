@@ -1,85 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TerraNova Engineering Lab Hub</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Interests Survey</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 h-full flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
-    <!-- Main Content Container -->
-    <main class="max-w-3xl w-full mx-auto px-6 py-12 flex flex-col items-center justify-center flex-grow">
-        
-        <!-- Header Section -->
-        <div class="text-center mb-10">
-            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">TerraNova Engineering Lab</h1>
-            <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
-                Advanced STEM initiatives, student research projects, and educational tools. Access our active portals and community platforms below.
-            </p>
-        </div>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-slate-800 p-8 rounded-xl shadow-lg border border-slate-700">
+        <h1 class="text-2xl font-bold mb-2 text-center text-white">STEM Interest Survey</h1>
+        <p class="text-slate-400 text-sm mb-6 text-center">Please select your primary educational and technical interests.</p>
 
-        <!-- Navigation Links Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl mb-8">
-            
-            <!-- Survey Portal -->
-            <a href="https://terranovaeng.github.io/survey/" class="group p-5 bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500 transition duration-200 shadow-lg flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400 bg-indigo-950/60 px-2.5 py-1 rounded-md border border-indigo-500/30">Active Tool</span>
-                        <svg class="w-4 h-4 text-slate-500 group-hover:text-indigo-400 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </div>
-                    <h2 class="text-lg font-bold text-white group-hover:text-indigo-300 transition">STEM Interest Survey</h2>
-                    <p class="text-slate-400 text-xs mt-1">Submit your technical interests and sign up for Jugend forscht team formation.</p>
-                </div>
-            </a>
+        <!-- Success Message Container -->
+        <div data-fs-success class="hidden bg-emerald-900/50 border border-emerald-500 text-emerald-200 p-4 rounded-lg text-center mb-4">
+            Thank you! Your survey response has been submitted successfully.
+        </div>
+        
+        <!-- Form-level Error Container -->
+        <div data-fs-error class="hidden bg-rose-900/50 border border-rose-500 text-rose-200 p-4 rounded-lg text-center mb-4 text-sm"></div>
 
-            <!-- German Learning Hub (Haus der Worte) -->
-            <a href="https://terranovaeng.github.io/haus-der-worte-deutsch/" class="group p-5 bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500 transition duration-200 shadow-lg flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-950/60 px-2.5 py-1 rounded-md border border-emerald-500/30">Language App</span>
-                        <svg class="w-4 h-4 text-slate-500 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </div>
-                    <h2 class="text-lg font-bold text-white group-hover:text-emerald-300 transition">Haus der Worte</h2>
-                    <p class="text-slate-400 text-xs mt-1">Interactive German vocabulary flashcards, matching games, and progressive tools.</p>
-                </div>
-            </a>
+        <form id="survey-form" class="space-y-4">
+            <!-- Hidden Subject Field -->
+            <input type="hidden" name="_subject" value="New STEM Interest Survey Submission">
+            
+            <!-- Name / Identifier -->
+            <div>
+                <label class="block text-sm font-medium text-slate-300 mb-1">Your Name / Call Sign</label>
+                <input type="text" name="name" required data-fs-field class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-indigo-500 text-slate-100">
+                <span data-fs-error="name" class="text-rose-400 text-xs mt-1 block"></span>
+            </div>
 
-            <!-- Google Classroom -->
-            <a href="https://classroom.google.com/c/ODkyOTg1Njk4OTkw?cjc=nq66rh3v" target="_blank" rel="noopener noreferrer" class="group p-5 bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500 transition duration-200 shadow-lg flex flex-col justify-between sm:col-span-2">
-                <div>
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-semibold uppercase tracking-wider text-amber-400 bg-amber-950/60 px-2.5 py-1 rounded-md border border-amber-500/30">Class Portal</span>
-                        <svg class="w-4 h-4 text-slate-500 group-hover:text-amber-400 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    </div>
-                    <h2 class="text-lg font-bold text-white group-hover:text-amber-300 transition">Google Classroom (Code: nq66rh3v)</h2>
-                    <p class="text-slate-400 text-xs mt-1">Join our classroom stream for announcements, project files, and mentorship assignments.</p>
-                </div>
-            </a>
+            <!-- Email Field -->
+            <div>
+                <label class="block text-sm font-medium text-slate-300 mb-1">Email Address</label>
+                <input type="email" name="email" required data-fs-field class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-indigo-500 text-slate-100">
+                <span data-fs-error="email" class="text-rose-400 text-xs mt-1 block"></span>
+            </div>
 
-        </div>
+            <!-- Interests Checkboxes -->
+            <div class="space-y-2 pt-2">
+                <span class="block text-sm font-medium text-slate-300 mb-2">Select areas of interest (check all that apply):</span>
+                
+                <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
+                    <input type="checkbox" name="interests" value="Radio Frequency" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
+                    <span class="text-slate-200">Radio Frequency (RF)</span>
+                </label>
 
-        <!-- Jugend forscht Notice Banner -->
-        <div class="w-full max-w-2xl bg-indigo-950/40 border border-indigo-500/30 rounded-xl p-5 mb-8 text-center shadow-lg">
-            <h3 class="text-sm font-semibold text-indigo-200 mb-1">Jugend forscht & Schüler experimentieren</h3>
-            <p class="text-xs text-slate-400">
-                Interested in forming a regional team? Complete our <a href="https://terranovaeng.github.io/survey/" class="text-indigo-400 underline hover:text-white">STEM Interest Survey</a> to register your interest for upcoming project mentorship.
-            </p>
-        </div>
+                <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
+                    <input type="checkbox" name="interests" value="Aerodynamics" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
+                    <span class="text-slate-200">Aerodynamics & Rocketry</span>
+                </label>
 
-        <!-- Philosophy / Footer Note -->
-        <div class="text-center border-t border-slate-900 pt-6 w-full max-w-lg">
-            <p class="text-slate-500 text-xs italic">
-                "Dedicated to the advancement of Computer Science and STEM education through the active synthesis of primary literature and rigorous human inquiry."
-            </p>
-        </div>
+                <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
+                    <input type="checkbox" name="interests" value="Coding" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
+                    <span class="text-slate-200">Coding / Software Development</span>
+                </label>
 
-    </main>
+                <label class="flex items-center space-x-3 p-2 bg-slate-900/50 rounded border border-slate-700/50 cursor-pointer hover:bg-slate-900">
+                    <input type="checkbox" name="interests" value="Linux" class="w-4 h-4 text-indigo-600 rounded bg-slate-900 border-slate-700">
+                    <span class="text-slate-200">Linux Systems Administration</span>
+                </label>
+            </div>
 
-    <!-- Footer -->
-    <footer class="py-4 text-center text-slate-600 text-xs border-t border-slate-900">
-        &copy; 2026 TerraNova Engineering Lab. All rights reserved.
-    </footer>
+            <!-- Other / Write-in Field -->
+            <div class="pt-2">
+                <label class="block text-sm font-medium text-slate-300 mb-1">Other Interests / Comments</label>
+                <input type="text" name="other_interest" placeholder="Enter anything else not listed..." data-fs-field class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-indigo-500 text-slate-100 placeholder-slate-500 text-sm">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" data-fs-submit-btn class="w-full mt-6 py-2 px-4 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg transition duration-200 shadow-md disabled:opacity-50">
+                Submit Survey
+            </button>
+        </form>
+    </div>
+
+    <!-- Formspree AJAX Library -->
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#survey-form', formId: 'xvkznyag' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
